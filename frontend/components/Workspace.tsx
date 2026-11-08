@@ -12,7 +12,9 @@ import {
   Zap,
   ShieldCheck,
   Flame,
-  Gauge
+  Gauge,
+  SlidersHorizontal,
+  Bookmark
 } from "lucide-react";
 import { OptimizationMode, ModelInfo } from "@/types/promptx";
 import { countTokensApi } from "@/lib/api";
@@ -81,6 +83,10 @@ export const Workspace: React.FC<WorkspaceProps> = ({
       setRawPrompt(
         "Extract financial statement metrics from this quarterly report into a valid RFC-8259 JSON object with fields: revenue_usd, net_margin_pct, ebitda, and guidance_q4. No preamble or markdown commentary."
       );
+    } else if (type === "reasoning") {
+      setRawPrompt(
+        "Solve this probability puzzle step by step: A bag contains 4 red, 6 blue, and 5 green marbles. Three marbles are drawn successively without replacement. What is the probability that all three marbles are different colors? Express answer as a simplified fraction."
+      );
     }
   };
 
@@ -94,54 +100,60 @@ export const Workspace: React.FC<WorkspaceProps> = ({
   };
 
   return (
-    <div className="flex-1 flex flex-col h-full bg-[#090b10] border-r border-zinc-800/80 p-5 overflow-y-auto">
+    <div className="flex-1 flex flex-col h-full bg-[#FAF7F2] border-r border-[#E2DACF] p-5 overflow-y-auto text-[#203328]">
       {/* Top Header Controls Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-zinc-800/60">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-[#E2DACF]">
         <div>
-          <h2 className="text-base font-semibold text-white tracking-tight flex items-center gap-2">
+          <h2 className="text-base font-semibold text-[#1A2E24] tracking-tight font-serif flex items-center gap-2">
             Raw Prompt Studio
           </h2>
-          <p className="text-xs text-zinc-400">
-            Input unoptimized user prompts, instructions, or queries
+          <p className="text-xs text-[#557162]">
+            Transform verbose, unstructured prompts into high-performance directives
           </p>
         </div>
 
-        {/* Example Presets */}
-        <div className="flex items-center gap-2 text-xs">
-          <span className="text-zinc-500 font-medium">Load Example:</span>
+        {/* Quick Example Presets */}
+        <div className="flex items-center gap-1.5 text-xs">
+          <span className="text-[#6C8576] font-medium mr-1">Presets:</span>
           <button
             onClick={() => loadExample("fluff")}
-            className="px-2 py-1 rounded-md bg-zinc-800/60 hover:bg-zinc-700/60 text-zinc-300 text-[11px] border border-zinc-700/50 cursor-pointer"
+            className="px-2.5 py-1 rounded-lg bg-[#EFE9DF] hover:bg-[#E3DCcf] text-[#2D5A43] text-[11px] font-medium border border-[#D8CEBE] transition-all cursor-pointer shadow-2xs"
           >
             Redundant Fluff
           </button>
           <button
             onClick={() => loadExample("coding")}
-            className="px-2 py-1 rounded-md bg-zinc-800/60 hover:bg-zinc-700/60 text-zinc-300 text-[11px] border border-zinc-700/50 cursor-pointer"
+            className="px-2.5 py-1 rounded-lg bg-[#EFE9DF] hover:bg-[#E3DCcf] text-[#2D5A43] text-[11px] font-medium border border-[#D8CEBE] transition-all cursor-pointer shadow-2xs"
           >
-            Complex Code
+            Concurrency Code
           </button>
           <button
             onClick={() => loadExample("structured")}
-            className="px-2 py-1 rounded-md bg-zinc-800/60 hover:bg-zinc-700/60 text-zinc-300 text-[11px] border border-zinc-700/50 cursor-pointer"
+            className="px-2.5 py-1 rounded-lg bg-[#EFE9DF] hover:bg-[#E3DCcf] text-[#2D5A43] text-[11px] font-medium border border-[#D8CEBE] transition-all cursor-pointer shadow-2xs"
           >
             JSON Schema
+          </button>
+          <button
+            onClick={() => loadExample("reasoning")}
+            className="px-2.5 py-1 rounded-lg bg-[#EFE9DF] hover:bg-[#E3DCcf] text-[#2D5A43] text-[11px] font-medium border border-[#D8CEBE] transition-all cursor-pointer shadow-2xs"
+          >
+            Math Reasoner
           </button>
         </div>
       </div>
 
-      {/* Target Model & Optimization Mode Selectors */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      {/* Target Model & Mode Selectors */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3.5">
         {/* Model Selector */}
         <div>
-          <label className="block text-xs font-medium text-zinc-300 mb-1.5">
-            Target Model & Tokenizer
+          <label className="block text-xs font-semibold text-[#2D5A43] mb-1.5">
+            Target LLM Architecture
           </label>
           <div className="relative">
             <select
               value={targetModel}
               onChange={(e) => setTargetModel(e.target.value)}
-              className="w-full bg-[#121520] border border-zinc-800/90 rounded-xl px-3.5 py-2.5 text-xs text-zinc-200 focus:outline-none focus:border-cyan-500 appearance-none font-medium cursor-pointer"
+              className="w-full bg-[#FFFFFF] border border-[#DACFBF] rounded-xl px-3.5 py-2.5 text-xs text-[#1A2E24] focus:outline-none focus:border-[#2D5A43] focus:ring-1 focus:ring-[#2D5A43] appearance-none font-medium cursor-pointer shadow-xs"
             >
               {models.length > 0 ? (
                 models.map((m) => (
@@ -160,16 +172,16 @@ export const Workspace: React.FC<WorkspaceProps> = ({
                 </>
               )}
             </select>
-            <ChevronDown className="w-4 h-4 text-zinc-400 absolute right-3 top-3 pointer-events-none" />
+            <ChevronDown className="w-4 h-4 text-[#6C8576] absolute right-3 top-3 pointer-events-none" />
           </div>
         </div>
 
         {/* Mode Selector */}
         <div>
-          <label className="block text-xs font-medium text-zinc-300 mb-1.5">
+          <label className="block text-xs font-semibold text-[#2D5A43] mb-1.5">
             Optimization Mode
           </label>
-          <div className="grid grid-cols-4 gap-1.5 p-1 bg-[#121520] rounded-xl border border-zinc-800/90">
+          <div className="grid grid-cols-4 gap-1 p-1 bg-[#EBE4D8] rounded-xl border border-[#DACFBF] shadow-xs">
             {(["QUICK", "BALANCED", "DEEP", "EXTREME"] as OptimizationMode[]).map((m) => {
               const isActive = mode === m;
               return (
@@ -178,8 +190,8 @@ export const Workspace: React.FC<WorkspaceProps> = ({
                   onClick={() => setMode(m)}
                   className={`py-1.5 rounded-lg text-[11px] font-semibold transition-all flex items-center justify-center gap-1 cursor-pointer ${
                     isActive
-                      ? "bg-cyan-500 text-black shadow-md shadow-cyan-500/20"
-                      : "text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/50"
+                      ? "bg-[#2D5A43] text-[#F8F6F0] shadow-sm shadow-[#2D5A43]/20"
+                      : "text-[#4A6354] hover:text-[#1A2E24] hover:bg-[#E3DCcf]"
                   }`}
                 >
                   {m === "QUICK" && <Zap className="w-3 h-3" />}
@@ -194,33 +206,33 @@ export const Workspace: React.FC<WorkspaceProps> = ({
         </div>
       </div>
 
-      {/* Mode Description Banner */}
-      <div className="mt-2.5 px-3 py-1.5 rounded-lg bg-zinc-900/60 border border-zinc-800/60 text-[11px] text-zinc-400 flex items-center justify-between">
-        <span>
-          {mode === "QUICK" && "⚡ QUICK: Fast single-pass token compression with minimal latency."}
-          {mode === "BALANCED" && "⚖️ BALANCED: Optimal equilibrium between token reduction and prompt quality."}
-          {mode === "DEEP" && "🔬 DEEP: Multi-pass refinement and rigorous quality evaluation validation."}
+      {/* Mode Banner in Warm Beige */}
+      <div className="mt-2.5 px-3.5 py-2 rounded-xl bg-[#F0EBE1] border border-[#E0D5C3] text-[11px] text-[#4A6354] flex items-center justify-between">
+        <span className="font-medium">
+          {mode === "QUICK" && "⚡ QUICK: Fast single-pass token compression with sub-millisecond response."}
+          {mode === "BALANCED" && "⚖️ BALANCED: Optimal balance between output fidelity and token reduction."}
+          {mode === "DEEP" && "🔬 DEEP: Multi-pass iterative refinement and constraint validation."}
           {mode === "EXTREME" && "🔥 EXTREME: Aggressive token elimination with strict semantic preservation."}
         </span>
-        <span className="font-mono text-[10px] text-cyan-400">
-          Target Tokenizer: {targetModel.includes("gpt-4o") ? "o200k_base" : "cl100k_base"}
+        <span className="font-mono text-[10px] text-[#2D5A43] font-semibold bg-[#E4ECE5] px-2 py-0.5 rounded-full border border-[#C5DEC9]">
+          Tokenizer: {targetModel.includes("gpt-4o") ? "o200k_base" : "cl100k_base"}
         </span>
       </div>
 
       {/* Raw Prompt Textarea */}
-      <div className="mt-4 flex-1 flex flex-col min-h-[220px]">
-        <div className="flex items-center justify-between pb-1.5 text-xs text-zinc-400">
-          <span className="font-medium">Raw Prompt Input</span>
+      <div className="mt-3.5 flex-1 flex flex-col min-h-[220px]">
+        <div className="flex items-center justify-between pb-1.5 text-xs text-[#557162]">
+          <span className="font-semibold text-[#2D5A43]">User Input Prompt</span>
           <div className="flex items-center gap-2">
             <button
               onClick={handlePaste}
-              className="flex items-center gap-1 px-2 py-0.5 rounded bg-zinc-800/70 hover:bg-zinc-700/70 text-[11px] text-zinc-300 cursor-pointer"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#EFE9DF] hover:bg-[#E3DCcf] text-[11px] font-medium text-[#2D5A43] border border-[#D8CEBE] cursor-pointer shadow-2xs"
             >
               <Clipboard className="w-3 h-3" /> Paste
             </button>
             <button
               onClick={() => setRawPrompt("")}
-              className="flex items-center gap-1 px-2 py-0.5 rounded bg-zinc-800/70 hover:bg-zinc-700/70 text-[11px] text-zinc-300 cursor-pointer"
+              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#EFE9DF] hover:bg-[#E3DCcf] text-[11px] font-medium text-[#2D5A43] border border-[#D8CEBE] cursor-pointer shadow-2xs"
             >
               <RotateCcw className="w-3 h-3" /> Clear
             </button>
@@ -230,78 +242,78 @@ export const Workspace: React.FC<WorkspaceProps> = ({
         <textarea
           value={rawPrompt}
           onChange={(e) => setRawPrompt(e.target.value)}
-          placeholder="Paste or type any unstructured, wordy, or raw prompt here..."
-          className="flex-1 w-full bg-[#121520] border border-zinc-800/90 rounded-xl p-4 text-sm text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-cyan-500/80 resize-none font-mono leading-relaxed selection:bg-cyan-500/30"
+          placeholder="Paste or write any unstructured prompt here..."
+          className="flex-1 w-full bg-[#FFFFFF] border border-[#DACFBF] rounded-2xl p-4 text-xs md:text-sm text-[#1A2E24] placeholder-[#889E91] focus:outline-none focus:border-[#2D5A43] focus:ring-2 focus:ring-[#2D5A43]/15 resize-none font-mono leading-relaxed shadow-xs"
         />
 
-        {/* Token Count Status Footer */}
-        <div className="flex items-center justify-between mt-2 px-1 text-xs text-zinc-400">
+        {/* Live Token Status */}
+        <div className="flex items-center justify-between mt-2 px-1 text-xs text-[#557162]">
           <div className="flex items-center gap-3">
             <span>
               Tokens:{" "}
-              <strong className="text-cyan-400 font-mono font-semibold">
+              <strong className="text-[#2D5A43] font-mono font-bold bg-[#E6EFE8] px-1.5 py-0.5 rounded">
                 {liveTokens}
               </strong>
             </span>
-            <span className="text-zinc-600">|</span>
+            <span className="text-[#C8BCAB]">|</span>
             <span>
               Characters:{" "}
-              <strong className="text-zinc-300 font-mono">
+              <strong className="text-[#1A2E24] font-mono font-semibold">
                 {rawPrompt.length}
               </strong>
             </span>
           </div>
-          <span className="text-[11px] text-zinc-500">
-            Real tokenizer verified
+          <span className="text-[11px] text-[#6C8576] font-medium">
+            Verified Subword BPE
           </span>
         </div>
       </div>
 
       {/* Advanced Options Accordion */}
-      <div className="mt-4 border border-zinc-800/80 rounded-xl bg-[#121520]/60 overflow-hidden">
+      <div className="mt-3.5 border border-[#DACFBF] rounded-2xl bg-[#FFFFFF] overflow-hidden shadow-xs">
         <button
           onClick={() => setShowAdvanced(!showAdvanced)}
-          className="w-full px-4 py-2.5 flex items-center justify-between text-xs font-medium text-zinc-300 hover:bg-zinc-800/40 cursor-pointer"
+          className="w-full px-4 py-2.5 flex items-center justify-between text-xs font-semibold text-[#2D5A43] hover:bg-[#FAF7F2] cursor-pointer transition-colors"
         >
           <div className="flex items-center gap-2">
-            <Sliders className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Advanced Optimization Controls & Directives</span>
+            <SlidersHorizontal className="w-3.5 h-3.5 text-[#2D5A43]" />
+            <span>Advanced Controls: Term Masking & Custom Directives</span>
           </div>
           {showAdvanced ? (
-            <ChevronUp className="w-4 h-4 text-zinc-500" />
+            <ChevronUp className="w-4 h-4 text-[#6C8576]" />
           ) : (
-            <ChevronDown className="w-4 h-4 text-zinc-500" />
+            <ChevronDown className="w-4 h-4 text-[#6C8576]" />
           )}
         </button>
 
         {showAdvanced && (
-          <div className="p-4 pt-2 border-t border-zinc-800/60 space-y-3.5 text-xs">
+          <div className="p-4 pt-2 border-t border-[#E8DFD0] space-y-3 text-xs bg-[#FAF7F2]">
             <div>
-              <label className="block text-zinc-300 font-medium mb-1">
-                Preserve Exact Terms / Identifiers (Comma-separated)
+              <label className="block text-[#1A2E24] font-semibold mb-1">
+                Preserve Exact Terms / Variables (Comma-separated)
               </label>
               <input
                 type="text"
                 value={preserveTerms}
                 onChange={(e) => setPreserveTerms(e.target.value)}
-                placeholder="e.g. user_id, POST /api/checkout, Redis, O(log N)"
-                className="w-full bg-[#0a0c12] border border-zinc-800 rounded-lg px-3 py-2 text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-cyan-500/60 font-mono"
+                placeholder="e.g. user_id, POST /api/v1/checkout, Redis, O(N log N)"
+                className="w-full bg-[#FFFFFF] border border-[#DACFBF] rounded-xl px-3 py-2 text-[#1A2E24] placeholder-[#889E91] focus:outline-none focus:border-[#2D5A43] font-mono"
               />
-              <p className="text-[10px] text-zinc-500 mt-1">
-                These exact terms will be masked and guaranteed untouched during semantic compression.
+              <p className="text-[10px] text-[#6C8576] mt-1">
+                Terms entered here are shielded with semantic masks and preserved verbatim.
               </p>
             </div>
 
             <div>
-              <label className="block text-zinc-300 font-medium mb-1">
+              <label className="block text-[#1A2E24] font-semibold mb-1">
                 Custom Optimization Directives
               </label>
               <input
                 type="text"
                 value={customInstructions}
                 onChange={(e) => setCustomInstructions(e.target.value)}
-                placeholder="e.g. Enforce strict typescript types, omit introduction, sub-80 tokens"
-                className="w-full bg-[#0a0c12] border border-zinc-800 rounded-lg px-3 py-2 text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-cyan-500/60"
+                placeholder="e.g. Enforce TypeScript interfaces, direct imperative sentences, sub-80 tokens"
+                className="w-full bg-[#FFFFFF] border border-[#DACFBF] rounded-xl px-3 py-2 text-[#1A2E24] placeholder-[#889E91] focus:outline-none focus:border-[#2D5A43]"
               />
             </div>
           </div>
@@ -309,29 +321,29 @@ export const Workspace: React.FC<WorkspaceProps> = ({
       </div>
 
       {/* Action Footer: Dev Mode Toggle & Optimize Button */}
-      <div className="mt-5 flex items-center justify-between gap-4">
-        <label className="flex items-center gap-2 text-xs text-zinc-400 cursor-pointer select-none">
+      <div className="mt-4 flex items-center justify-between gap-4">
+        <label className="flex items-center gap-2 text-xs text-[#4A6354] font-medium cursor-pointer select-none">
           <input
             type="checkbox"
             checked={devMode}
             onChange={(e) => setDevMode(e.target.checked)}
-            className="w-4 h-4 rounded border-zinc-700 bg-zinc-900 text-cyan-500 focus:ring-0 focus:ring-offset-0 cursor-pointer"
+            className="w-4 h-4 rounded border-[#DACFBF] text-[#2D5A43] focus:ring-0 focus:ring-offset-0 cursor-pointer accent-[#2D5A43]"
           />
-          <Terminal className="w-3.5 h-3.5 text-cyan-400" />
-          <span>Developer Mode (Show 7-Agent Execution Trace)</span>
+          <Terminal className="w-3.5 h-3.5 text-[#2D5A43]" />
+          <span>Developer Mode (Inspect 7-Agent Trace)</span>
         </label>
 
         <button
           onClick={onOptimize}
           disabled={isLoading || !rawPrompt.trim()}
-          className={`flex items-center gap-2.5 px-6 py-3 rounded-xl font-semibold text-sm transition-all cursor-pointer ${
+          className={`flex items-center gap-2.5 px-6 py-3 rounded-2xl font-semibold text-sm transition-all cursor-pointer shadow-md ${
             isLoading || !rawPrompt.trim()
-              ? "bg-zinc-800 text-zinc-500 cursor-not-allowed"
-              : "bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white shadow-lg shadow-cyan-500/25 active:scale-98"
+              ? "bg-[#D8CEBE] text-[#889E91] cursor-not-allowed"
+              : "bg-[#2D5A43] hover:bg-[#234735] text-[#F8F6F0] shadow-[#2D5A43]/20 hover:shadow-lg active:scale-[0.98]"
           }`}
         >
           <Sparkles className={`w-4 h-4 ${isLoading ? "animate-spin" : ""}`} />
-          <span>{isLoading ? "Optimizing..." : "Optimize Prompt"}</span>
+          <span>{isLoading ? "Optimizing with Agents..." : "Optimize Prompt"}</span>
         </button>
       </div>
     </div>

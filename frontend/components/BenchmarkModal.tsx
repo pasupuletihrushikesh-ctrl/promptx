@@ -44,20 +44,20 @@ export const BenchmarkModal: React.FC<BenchmarkModalProps> = ({ onClose }) => {
     : [];
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="w-full max-w-5xl max-h-[88vh] bg-[#0f121d] border border-cyan-500/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-zinc-300">
+    <div className="fixed inset-0 z-50 bg-[#1A2621]/60 backdrop-blur-xs flex items-center justify-center p-4">
+      <div className="w-full max-w-5xl max-h-[88vh] bg-[#FDFBF7] border border-[#DACFBF] rounded-3xl shadow-2xl flex flex-col overflow-hidden text-[#203328]">
         {/* Header */}
-        <div className="p-4 px-6 border-b border-zinc-800 flex items-center justify-between bg-[#131726]">
+        <div className="p-4 px-6 border-b border-[#E8DFD0] flex items-center justify-between bg-[#F4EFEA]">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-[#E6EFE8] text-[#2D5A43] flex items-center justify-center border border-[#C5DEC9]">
               <BarChart3 className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-white tracking-wide">
+              <h3 className="text-sm font-bold text-[#1A2E24] tracking-wide font-serif">
                 PROMPTX 100-Prompt Benchmark Suite
               </h3>
-              <p className="text-xs text-zinc-400">
-                Rigorous evaluation across 7 core prompt archetypes measuring token reduction, semantic preservation, and latency
+              <p className="text-xs text-[#557162]">
+                Empirical evaluation across 7 archetypes measuring token reduction, semantic preservation, and latency
               </p>
             </div>
           </div>
@@ -65,10 +65,10 @@ export const BenchmarkModal: React.FC<BenchmarkModalProps> = ({ onClose }) => {
             <button
               onClick={handleRun}
               disabled={isRunning}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white transition-all cursor-pointer ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-[#F8F6F0] transition-all cursor-pointer shadow-md ${
                 isRunning
-                  ? "bg-zinc-800 text-zinc-500 cursor-not-allowed"
-                  : "bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-md shadow-emerald-900/30"
+                  ? "bg-[#D8CEBE] text-[#889E91] cursor-not-allowed"
+                  : "bg-[#2D5A43] hover:bg-[#234735] shadow-[#2D5A43]/20"
               }`}
             >
               <Play className={`w-3.5 h-3.5 ${isRunning ? "animate-spin" : ""}`} />
@@ -76,7 +76,7 @@ export const BenchmarkModal: React.FC<BenchmarkModalProps> = ({ onClose }) => {
             </button>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors cursor-pointer"
+              className="p-1.5 rounded-lg text-[#6C8576] hover:text-[#1A2E24] hover:bg-[#EBE4D8] transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
@@ -88,54 +88,54 @@ export const BenchmarkModal: React.FC<BenchmarkModalProps> = ({ onClose }) => {
           {/* Summary KPIs */}
           {benchmark && (
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 font-mono">
-              <div className="p-3.5 rounded-xl bg-[#141829] border border-zinc-800">
-                <div className="text-[11px] text-zinc-400 flex items-center justify-between font-sans">
+              <div className="p-3.5 rounded-2xl bg-[#FFFFFF] border border-[#DACFBF] shadow-xs">
+                <div className="text-[11px] text-[#557162] flex items-center justify-between font-sans font-medium">
                   <span>Pass Rate</span>
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <CheckCircle2 className="w-4 h-4 text-[#2D5A43]" />
                 </div>
-                <div className="text-xl font-bold text-emerald-400 mt-1">
+                <div className="text-xl font-bold text-[#2D5A43] mt-1 font-serif">
                   {benchmark.pass_rate_percent}%
                 </div>
-                <div className="text-[10px] text-zinc-500 mt-0.5">
-                  {benchmark.passed_prompts} / {benchmark.total_prompts} prompts passed
+                <div className="text-[10px] text-[#788E81] mt-0.5">
+                  {benchmark.passed_prompts} / {benchmark.total_prompts} tests passed
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-[#141829] border border-zinc-800">
-                <div className="text-[11px] text-zinc-400 flex items-center justify-between font-sans">
+              <div className="p-3.5 rounded-2xl bg-[#FFFFFF] border border-[#DACFBF] shadow-xs">
+                <div className="text-[11px] text-[#557162] flex items-center justify-between font-sans font-medium">
                   <span>Avg Token Reduction</span>
-                  <TrendingDown className="w-4 h-4 text-cyan-400" />
+                  <TrendingDown className="w-4 h-4 text-[#2D5A43]" />
                 </div>
-                <div className="text-xl font-bold text-cyan-400 mt-1">
+                <div className="text-xl font-bold text-[#2D5A43] mt-1 font-serif">
                   {benchmark.average_token_reduction_percent}%
                 </div>
-                <div className="text-[10px] text-zinc-500 mt-0.5">
+                <div className="text-[10px] text-[#788E81] mt-0.5">
                   Up to 91% on redundant prompts
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-[#141829] border border-zinc-800">
-                <div className="text-[11px] text-zinc-400 flex items-center justify-between font-sans">
+              <div className="p-3.5 rounded-2xl bg-[#FFFFFF] border border-[#DACFBF] shadow-xs">
+                <div className="text-[11px] text-[#557162] flex items-center justify-between font-sans font-medium">
                   <span>Avg Quality Score</span>
-                  <Award className="w-4 h-4 text-amber-400" />
+                  <Award className="w-4 h-4 text-amber-600" />
                 </div>
-                <div className="text-xl font-bold text-amber-400 mt-1">
+                <div className="text-xl font-bold text-amber-600 mt-1 font-serif">
                   {benchmark.average_quality_score}/100
                 </div>
-                <div className="text-[10px] text-zinc-500 mt-0.5">
+                <div className="text-[10px] text-[#788E81] mt-0.5">
                   Semantic fidelity index
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-[#141829] border border-zinc-800">
-                <div className="text-[11px] text-zinc-400 flex items-center justify-between font-sans">
+              <div className="p-3.5 rounded-2xl bg-[#FFFFFF] border border-[#DACFBF] shadow-xs">
+                <div className="text-[11px] text-[#557162] flex items-center justify-between font-sans font-medium">
                   <span>Avg Latency</span>
-                  <Clock className="w-4 h-4 text-purple-400" />
+                  <Clock className="w-4 h-4 text-[#2D5A43]" />
                 </div>
-                <div className="text-xl font-bold text-purple-400 mt-1">
+                <div className="text-xl font-bold text-[#1A2E24] mt-1 font-serif">
                   {benchmark.average_latency_ms} ms
                 </div>
-                <div className="text-[10px] text-zinc-500 mt-0.5">
+                <div className="text-[10px] text-[#788E81] mt-0.5">
                   Sub-millisecond pipeline
                 </div>
               </div>
@@ -147,10 +147,10 @@ export const BenchmarkModal: React.FC<BenchmarkModalProps> = ({ onClose }) => {
             <div className="flex flex-wrap items-center gap-1.5 text-xs">
               <button
                 onClick={() => setCategoryFilter("all")}
-                className={`px-3 py-1.5 rounded-lg font-medium transition-colors cursor-pointer ${
+                className={`px-3 py-1.5 rounded-xl font-semibold transition-all cursor-pointer shadow-2xs ${
                   categoryFilter === "all"
-                    ? "bg-cyan-500 text-black font-semibold"
-                    : "bg-zinc-800/80 text-zinc-400 hover:text-white"
+                    ? "bg-[#2D5A43] text-[#F8F6F0]"
+                    : "bg-[#FFFFFF] text-[#557162] hover:bg-[#EBE4D8] border border-[#DACFBF]"
                 }`}
               >
                 All (100)
@@ -159,10 +159,10 @@ export const BenchmarkModal: React.FC<BenchmarkModalProps> = ({ onClose }) => {
                 <button
                   key={cat}
                   onClick={() => setCategoryFilter(cat)}
-                  className={`px-3 py-1.5 rounded-lg font-medium transition-colors cursor-pointer ${
+                  className={`px-3 py-1.5 rounded-xl font-semibold transition-all cursor-pointer shadow-2xs ${
                     categoryFilter === cat
-                      ? "bg-cyan-500 text-black font-semibold"
-                      : "bg-zinc-800/80 text-zinc-400 hover:text-white"
+                      ? "bg-[#2D5A43] text-[#F8F6F0]"
+                      : "bg-[#FFFFFF] text-[#557162] hover:bg-[#EBE4D8] border border-[#DACFBF]"
                   }`}
                 >
                   {cat}
@@ -171,54 +171,54 @@ export const BenchmarkModal: React.FC<BenchmarkModalProps> = ({ onClose }) => {
             </div>
 
             <div className="relative">
-              <Search className="w-3.5 h-3.5 text-zinc-500 absolute left-3 top-2.5" />
+              <Search className="w-3.5 h-3.5 text-[#788E81] absolute left-3 top-2.5" />
               <input
                 type="text"
                 placeholder="Search test id or archetype..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-[#141829] border border-zinc-800 rounded-lg pl-8 pr-3 py-1.5 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-cyan-500"
+                className="bg-[#FFFFFF] border border-[#DACFBF] rounded-xl pl-8 pr-3 py-1.5 text-xs text-[#1A2E24] placeholder-[#889E91] focus:outline-none focus:border-[#2D5A43] shadow-xs"
               />
             </div>
           </div>
 
           {/* Benchmark Table */}
-          <div className="border border-zinc-800 rounded-xl overflow-hidden">
+          <div className="border border-[#DACFBF] rounded-2xl overflow-hidden bg-[#FFFFFF] shadow-xs">
             <div className="max-h-80 overflow-y-auto scrollbar-thin">
               <table className="w-full text-left text-xs">
-                <thead className="bg-[#141829] text-zinc-400 border-b border-zinc-800 text-[11px] font-mono sticky top-0">
+                <thead className="bg-[#F4EFEA] text-[#4A6354] border-b border-[#E8DFD0] text-[11px] font-semibold sticky top-0">
                   <tr>
-                    <th className="p-2.5">Test ID</th>
-                    <th className="p-2.5">Category Archetype</th>
-                    <th className="p-2.5">Tokens (Raw → Opt)</th>
-                    <th className="p-2.5">Reduction</th>
-                    <th className="p-2.5">Quality Score</th>
-                    <th className="p-2.5">Latency</th>
-                    <th className="p-2.5">Status</th>
+                    <th className="p-3">Test ID</th>
+                    <th className="p-3">Archetype</th>
+                    <th className="p-3">Tokens (Raw → Opt)</th>
+                    <th className="p-3">Reduction</th>
+                    <th className="p-3">Quality Score</th>
+                    <th className="p-3">Latency</th>
+                    <th className="p-3">Status</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-zinc-800/60 bg-[#0d0f17] font-mono">
+                <tbody className="divide-y divide-[#E8DFD0] bg-[#FFFFFF] font-mono">
                   {filteredResults.map((r) => (
-                    <tr key={r.item_id} className="hover:bg-zinc-800/40">
-                      <td className="p-2.5 font-bold text-cyan-400">{r.item_id}</td>
-                      <td className="p-2.5 text-zinc-300 font-sans">{r.category}</td>
-                      <td className="p-2.5 text-zinc-400">
-                        {r.raw_tokens} → <strong className="text-white">{r.optimized_tokens}</strong>
+                    <tr key={r.item_id} className="hover:bg-[#FAF7F2]">
+                      <td className="p-3 font-bold text-[#2D5A43]">{r.item_id}</td>
+                      <td className="p-3 text-[#1A2E24] font-sans font-medium">{r.category}</td>
+                      <td className="p-3 text-[#557162]">
+                        {r.raw_tokens} → <strong className="text-[#1A2E24]">{r.optimized_tokens}</strong>
                       </td>
-                      <td className="p-2.5">
-                        <span className={`font-semibold ${r.reduction_percent > 0 ? "text-emerald-400" : "text-zinc-500"}`}>
+                      <td className="p-3">
+                        <span className={`font-bold ${r.reduction_percent > 0 ? "text-[#2D5A43]" : "text-[#788E81]"}`}>
                           {r.reduction_percent.toFixed(1)}%
                         </span>
                       </td>
-                      <td className="p-2.5 text-amber-400">{r.quality_score}/100</td>
-                      <td className="p-2.5 text-zinc-400">{r.latency_ms}ms</td>
-                      <td className="p-2.5">
+                      <td className="p-3 text-amber-600 font-bold">{r.quality_score}/100</td>
+                      <td className="p-3 text-[#788E81]">{r.latency_ms}ms</td>
+                      <td className="p-3">
                         {r.passed ? (
-                          <span className="flex items-center gap-1 text-emerald-400 text-[10px]">
+                          <span className="flex items-center gap-1 text-[#2D5A43] text-[10px] font-bold">
                             <CheckCircle2 className="w-3.5 h-3.5" /> PASS
                           </span>
                         ) : (
-                          <span className="flex items-center gap-1 text-rose-400 text-[10px]">
+                          <span className="flex items-center gap-1 text-rose-600 text-[10px] font-bold">
                             <XCircle className="w-3.5 h-3.5" /> FAIL
                           </span>
                         )}

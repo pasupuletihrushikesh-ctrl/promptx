@@ -154,7 +154,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex h-screen w-screen overflow-hidden bg-[#090b10] text-zinc-100 font-sans antialiased">
+    <main className="flex h-screen w-screen overflow-hidden bg-[#FAF7F2] text-[#1C2822] font-sans antialiased">
       {/* Left Panel Sidebar */}
       <Sidebar
         activeView={activeView}

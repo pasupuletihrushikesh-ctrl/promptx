@@ -15,7 +15,6 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
-    // In production, save to localStorage or backend configuration
     localStorage.setItem("promptx_openai_key", openaiKey);
     localStorage.setItem("promptx_anthropic_key", anthropicKey);
     localStorage.setItem("promptx_gemini_key", geminiKey);
@@ -28,26 +27,26 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl bg-[#0f121d] border border-cyan-500/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden text-zinc-300">
+    <div className="fixed inset-0 z-50 bg-[#1A2621]/60 backdrop-blur-xs flex items-center justify-center p-4">
+      <div className="w-full max-w-2xl bg-[#FDFBF7] border border-[#DACFBF] rounded-3xl shadow-2xl flex flex-col overflow-hidden text-[#203328]">
         {/* Header */}
-        <div className="p-4 px-6 border-b border-zinc-800 flex items-center justify-between bg-[#131726]">
+        <div className="p-4 px-6 border-b border-[#E8DFD0] flex items-center justify-between bg-[#F4EFEA]">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-[#E6EFE8] text-[#2D5A43] flex items-center justify-center border border-[#C5DEC9]">
               <Settings className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-white tracking-wide">
+              <h3 className="text-sm font-bold text-[#1A2E24] tracking-wide font-serif">
                 Engine Configuration & Provider Keys
               </h3>
-              <p className="text-xs text-zinc-400">
+              <p className="text-xs text-[#557162]">
                 Configure live LLM providers or use local offline BPE engine with zero external API costs
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg text-[#6C8576] hover:text-[#1A2E24] hover:bg-[#EBE4D8] transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -55,72 +54,72 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ onClose }) => {
 
         {/* Content Body */}
         <div className="p-6 space-y-4 text-xs">
-          <div className="p-3 rounded-xl bg-cyan-950/40 border border-cyan-800/40 text-cyan-300 text-[11px] leading-relaxed">
-            PROMPTX features a fully autonomous local heuristic and BPE tokenizer engine. It functions out-of-the-box with zero paid API keys! You may optionally configure API keys below for live frontier model generation.
+          <div className="p-3.5 rounded-2xl bg-[#E6EFE8] border border-[#C5DEC9] text-[#2D5A43] text-[11px] leading-relaxed font-medium">
+            PROMPTX features a fully autonomous local heuristic and subword BPE tokenizer engine. It functions out-of-the-box with zero paid API keys! You may optionally configure API keys below for live frontier model generation.
           </div>
 
           <div>
-            <label className="block text-zinc-300 font-medium mb-1 flex items-center gap-1.5">
-              <Key className="w-3.5 h-3.5 text-zinc-400" /> OpenAI API Key
+            <label className="block text-[#1A2E24] font-semibold mb-1 flex items-center gap-1.5">
+              <Key className="w-3.5 h-3.5 text-[#2D5A43]" /> OpenAI API Key
             </label>
             <input
               type="password"
               value={openaiKey}
               onChange={(e) => setOpenaiKey(e.target.value)}
               placeholder="sk-..."
-              className="w-full bg-[#141829] border border-zinc-800 rounded-lg p-2.5 text-zinc-200 font-mono"
+              className="w-full bg-[#FFFFFF] border border-[#DACFBF] rounded-xl p-3 text-[#1A2E24] font-mono shadow-xs"
             />
           </div>
 
           <div>
-            <label className="block text-zinc-300 font-medium mb-1 flex items-center gap-1.5">
-              <Key className="w-3.5 h-3.5 text-zinc-400" /> Anthropic API Key
+            <label className="block text-[#1A2E24] font-semibold mb-1 flex items-center gap-1.5">
+              <Key className="w-3.5 h-3.5 text-[#2D5A43]" /> Anthropic API Key
             </label>
             <input
               type="password"
               value={anthropicKey}
               onChange={(e) => setAnthropicKey(e.target.value)}
               placeholder="sk-ant-..."
-              className="w-full bg-[#141829] border border-zinc-800 rounded-lg p-2.5 text-zinc-200 font-mono"
+              className="w-full bg-[#FFFFFF] border border-[#DACFBF] rounded-xl p-3 text-[#1A2E24] font-mono shadow-xs"
             />
           </div>
 
           <div>
-            <label className="block text-zinc-300 font-medium mb-1 flex items-center gap-1.5">
-              <Key className="w-3.5 h-3.5 text-zinc-400" /> Google Gemini API Key
+            <label className="block text-[#1A2E24] font-semibold mb-1 flex items-center gap-1.5">
+              <Key className="w-3.5 h-3.5 text-[#2D5A43]" /> Google Gemini API Key
             </label>
             <input
               type="password"
               value={geminiKey}
               onChange={(e) => setGeminiKey(e.target.value)}
               placeholder="AIzaSy..."
-              className="w-full bg-[#141829] border border-zinc-800 rounded-lg p-2.5 text-zinc-200 font-mono"
+              className="w-full bg-[#FFFFFF] border border-[#DACFBF] rounded-xl p-3 text-[#1A2E24] font-mono shadow-xs"
             />
           </div>
 
           <div>
-            <label className="block text-zinc-300 font-medium mb-1 flex items-center gap-1.5">
-              <Server className="w-3.5 h-3.5 text-zinc-400" /> Ollama Local Endpoint URL
+            <label className="block text-[#1A2E24] font-semibold mb-1 flex items-center gap-1.5">
+              <Server className="w-3.5 h-3.5 text-[#2D5A43]" /> Ollama Local Endpoint URL
             </label>
             <input
               type="text"
               value={ollamaUrl}
               onChange={(e) => setOllamaUrl(e.target.value)}
               placeholder="http://localhost:11434"
-              className="w-full bg-[#141829] border border-zinc-800 rounded-lg p-2.5 text-zinc-200 font-mono"
+              className="w-full bg-[#FFFFFF] border border-[#DACFBF] rounded-xl p-3 text-[#1A2E24] font-mono shadow-xs"
             />
           </div>
         </div>
 
         {/* Footer */}
-        <div className="p-4 px-6 border-t border-zinc-800 flex justify-end bg-[#131726]">
+        <div className="p-4 px-6 border-t border-[#E8DFD0] flex justify-end bg-[#F4EFEA]">
           <button
             onClick={handleSave}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-medium text-xs shadow-md shadow-cyan-900/30 cursor-pointer"
+            className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#2D5A43] hover:bg-[#234735] text-[#F8F6F0] font-semibold text-xs shadow-md shadow-[#2D5A43]/20 cursor-pointer"
           >
             {saved ? (
               <>
-                <Check className="w-4 h-4 text-emerald-300" />
+                <Check className="w-4 h-4 text-[#C5DEC9]" />
                 <span>Configuration Saved!</span>
               </>
             ) : (

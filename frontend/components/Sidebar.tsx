@@ -14,7 +14,8 @@ import {
   Plus,
   Search,
   CheckCircle2,
-  Cpu
+  Cpu,
+  Leaf
 } from "lucide-react";
 import { HistoryItem } from "@/types/promptx";
 
@@ -47,33 +48,35 @@ export const Sidebar: React.FC<SidebarProps> = ({
   });
 
   return (
-    <aside className="w-80 h-screen bg-[#0d0f17] border-r border-zinc-800/80 flex flex-col flex-shrink-0 text-zinc-300 select-none">
+    <aside className="w-80 h-screen bg-[#F4EFEA] border-r border-[#E2DACF] flex flex-col flex-shrink-0 text-[#2C3E35] select-none">
       {/* Brand Header */}
-      <div className="p-4 border-b border-zinc-800/60 flex items-center justify-between">
+      <div className="p-4.5 border-b border-[#E2DACF] flex items-center justify-between bg-[#F8F5F0]">
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
-            <Sparkles className="w-5 h-5 text-white" />
+          <div className="w-9 h-9 rounded-xl bg-[#2D5A43] flex items-center justify-center shadow-md shadow-[#2D5A43]/20">
+            <Leaf className="w-5 h-5 text-[#F8F6F0]" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-bold text-base tracking-wider text-white">PROMPTX</span>
-              <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/60">
+              <span className="font-bold text-base tracking-wider text-[#1A2E24] font-serif">
+                PROMPTX
+              </span>
+              <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-[#E3EFE7] text-[#2D5A43] border border-[#C5DEC9] font-semibold">
                 v1.0
               </span>
             </div>
-            <p className="text-[11px] text-zinc-400">Autonomous Prompt Engine</p>
+            <p className="text-[11px] text-[#557162]">Autonomous AI Prompt Engine</p>
           </div>
         </div>
       </div>
 
-      {/* New Optimization Action */}
+      {/* New Optimization Button */}
       <div className="p-3">
         <button
           onClick={onNewOptimization}
-          className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-medium text-xs shadow-md shadow-cyan-900/30 transition-all cursor-pointer"
+          className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#2D5A43] hover:bg-[#234735] text-[#F8F6F0] font-medium text-xs shadow-md shadow-[#2D5A43]/20 transition-all cursor-pointer hover:shadow-lg active:scale-[0.99]"
         >
           <Plus className="w-4 h-4" />
-          New Optimization
+          <span>New Optimization</span>
         </button>
       </div>
 
@@ -81,92 +84,92 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <nav className="px-3 py-1 space-y-1">
         <button
           onClick={() => setActiveView("studio")}
-          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer ${
             activeView === "studio"
-              ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
-              : "hover:bg-zinc-800/60 text-zinc-400 hover:text-zinc-200"
+              ? "bg-[#E6EFE8] text-[#2D5A43] font-semibold shadow-xs border border-[#C5DEC9]"
+              : "hover:bg-[#EBE4D8] text-[#4A6354] hover:text-[#1A2E24]"
           }`}
         >
-          <Cpu className="w-4 h-4" />
+          <Cpu className="w-4 h-4 text-[#2D5A43]" />
           <span>Optimizer Studio</span>
         </button>
 
         <button
           onClick={() => setActiveView("batch")}
-          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer ${
             activeView === "batch"
-              ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
-              : "hover:bg-zinc-800/60 text-zinc-400 hover:text-zinc-200"
+              ? "bg-[#E6EFE8] text-[#2D5A43] font-semibold shadow-xs border border-[#C5DEC9]"
+              : "hover:bg-[#EBE4D8] text-[#4A6354] hover:text-[#1A2E24]"
           }`}
         >
-          <Layers className="w-4 h-4" />
+          <Layers className="w-4 h-4 text-[#2D5A43]" />
           <span>Batch Optimizer</span>
         </button>
 
         <button
           onClick={() => setActiveView("templates")}
-          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer ${
             activeView === "templates"
-              ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
-              : "hover:bg-zinc-800/60 text-zinc-400 hover:text-zinc-200"
+              ? "bg-[#E6EFE8] text-[#2D5A43] font-semibold shadow-xs border border-[#C5DEC9]"
+              : "hover:bg-[#EBE4D8] text-[#4A6354] hover:text-[#1A2E24]"
           }`}
         >
-          <FileCode2 className="w-4 h-4" />
+          <FileCode2 className="w-4 h-4 text-[#2D5A43]" />
           <span>Prompt Templates</span>
         </button>
 
         <button
           onClick={() => setActiveView("abtest")}
-          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer ${
             activeView === "abtest"
-              ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
-              : "hover:bg-zinc-800/60 text-zinc-400 hover:text-zinc-200"
+              ? "bg-[#E6EFE8] text-[#2D5A43] font-semibold shadow-xs border border-[#C5DEC9]"
+              : "hover:bg-[#EBE4D8] text-[#4A6354] hover:text-[#1A2E24]"
           }`}
         >
-          <SplitSquareVertical className="w-4 h-4" />
+          <SplitSquareVertical className="w-4 h-4 text-[#2D5A43]" />
           <span>A/B Testing Arena</span>
         </button>
 
         <button
           onClick={() => setActiveView("benchmark")}
-          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer ${
             activeView === "benchmark"
-              ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
-              : "hover:bg-zinc-800/60 text-zinc-400 hover:text-zinc-200"
+              ? "bg-[#E6EFE8] text-[#2D5A43] font-semibold shadow-xs border border-[#C5DEC9]"
+              : "hover:bg-[#EBE4D8] text-[#4A6354] hover:text-[#1A2E24]"
           }`}
         >
-          <BarChart3 className="w-4 h-4" />
+          <BarChart3 className="w-4 h-4 text-[#2D5A43]" />
           <span className="flex-1 text-left">Benchmark Suite</span>
-          <span className="text-[10px] bg-emerald-950/80 text-emerald-400 border border-emerald-800/50 px-1.5 py-0.2 rounded font-mono">
+          <span className="text-[10px] bg-[#E3EFE7] text-[#2D5A43] border border-[#C5DEC9] px-1.5 py-0.5 rounded-full font-mono font-medium">
             100 Tests
           </span>
         </button>
 
         <button
           onClick={() => setActiveView("settings")}
-          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer ${
             activeView === "settings"
-              ? "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20"
-              : "hover:bg-zinc-800/60 text-zinc-400 hover:text-zinc-200"
+              ? "bg-[#E6EFE8] text-[#2D5A43] font-semibold shadow-xs border border-[#C5DEC9]"
+              : "hover:bg-[#EBE4D8] text-[#4A6354] hover:text-[#1A2E24]"
           }`}
         >
-          <Settings className="w-4 h-4" />
+          <Settings className="w-4 h-4 text-[#2D5A43]" />
           <span>Configuration & API</span>
         </button>
       </nav>
 
       {/* History Section */}
       <div className="flex-1 flex flex-col min-h-0 mt-3 px-3">
-        <div className="flex items-center justify-between pb-2 border-b border-zinc-800/50">
-          <div className="flex items-center gap-1.5 text-xs font-medium text-zinc-400">
-            <History className="w-3.5 h-3.5" />
-            <span>History</span>
-            <span className="text-[10px] text-zinc-500 font-mono">({history.length})</span>
+        <div className="flex items-center justify-between pb-2 border-b border-[#E2DACF]">
+          <div className="flex items-center gap-1.5 text-xs font-medium text-[#4A6354]">
+            <History className="w-3.5 h-3.5 text-[#2D5A43]" />
+            <span className="font-semibold">Prompt History</span>
+            <span className="text-[10px] text-[#788E81] font-mono">({history.length})</span>
           </div>
           <button
             onClick={() => setFavoriteOnly(!favoriteOnly)}
-            className={`p-1 rounded hover:bg-zinc-800 transition-colors cursor-pointer ${
-              favoriteOnly ? "text-amber-400" : "text-zinc-500"
+            className={`p-1 rounded-lg hover:bg-[#E8DFC8] transition-colors cursor-pointer ${
+              favoriteOnly ? "text-amber-600" : "text-[#889E91]"
             }`}
             title="Filter Favorites"
           >
@@ -176,20 +179,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* History Search */}
         <div className="relative mt-2 mb-2">
-          <Search className="w-3.5 h-3.5 text-zinc-500 absolute left-2.5 top-2.5" />
+          <Search className="w-3.5 h-3.5 text-[#788E81] absolute left-2.5 top-2.5" />
           <input
             type="text"
-            placeholder="Search optimizations..."
+            placeholder="Search saved optimizations..."
             value={historySearch}
             onChange={(e) => setHistorySearch(e.target.value)}
-            className="w-full bg-[#141724] border border-zinc-800/80 rounded-lg pl-8 pr-3 py-1.5 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-cyan-500/50"
+            className="w-full bg-[#FFFFFF] border border-[#DACFBF] rounded-xl pl-8 pr-3 py-1.5 text-xs text-[#1A2E24] placeholder-[#889E91] focus:outline-none focus:border-[#2D5A43] focus:ring-1 focus:ring-[#2D5A43]"
           />
         </div>
 
         {/* History Item List */}
-        <div className="flex-1 overflow-y-auto space-y-1.5 pr-1 scrollbar-thin">
+        <div className="flex-1 overflow-y-auto space-y-2 pr-1 scrollbar-thin">
           {filteredHistory.length === 0 ? (
-            <div className="p-4 text-center text-zinc-500 text-xs">
+            <div className="p-4 text-center text-[#788E81] text-xs">
               No prompt optimizations found.
             </div>
           ) : (
@@ -197,35 +200,35 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <div
                 key={item.id}
                 onClick={() => onSelectHistory(item)}
-                className="group relative p-2.5 rounded-lg bg-[#141724]/70 hover:bg-[#1a1f33] border border-zinc-800/60 hover:border-cyan-500/40 transition-all cursor-pointer"
+                className="group relative p-2.5 rounded-xl bg-[#FFFFFF] hover:bg-[#FAF7F2] border border-[#E2DACF] hover:border-[#2D5A43] shadow-xs transition-all cursor-pointer"
               >
                 <div className="flex items-start justify-between gap-1">
-                  <p className="text-xs text-zinc-300 font-medium line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-[#203328] font-medium line-clamp-2 leading-relaxed">
                     {item.raw_prompt}
                   </p>
                   <button
                     onClick={(e) => onToggleFavorite(item.id, e)}
                     className={`p-0.5 rounded transition-colors ${
-                      item.is_favorite ? "text-amber-400" : "text-zinc-600 hover:text-amber-300"
+                      item.is_favorite ? "text-amber-500" : "text-[#B0C0B6] hover:text-amber-500"
                     }`}
                   >
                     <Star className="w-3 h-3 fill-current" />
                   </button>
                 </div>
-                <div className="mt-2 flex items-center justify-between text-[10px] text-zinc-400 font-mono">
-                  <span className="px-1.5 py-0.5 rounded bg-zinc-800/80 text-cyan-300">
+                <div className="mt-2 flex items-center justify-between text-[10px] text-[#557162] font-mono">
+                  <span className="px-1.5 py-0.5 rounded bg-[#F0EBE1] text-[#2D5A43] font-medium border border-[#E0D5C3]">
                     {item.target_model}
                   </span>
                   <div className="flex items-center gap-2">
-                    <span className="text-emerald-400 font-semibold">
+                    <span className="text-[#2D5A43] font-bold bg-[#E6EFE8] px-1 rounded">
                       -{item.savings_percent.toFixed(0)}%
                     </span>
-                    <span className="text-zinc-500">
+                    <span className="text-[#788E81]">
                       {item.optimized_tokens} tok
                     </span>
                     <button
                       onClick={(e) => onDeleteHistory(item.id, e)}
-                      className="opacity-0 group-hover:opacity-100 hover:text-rose-400 transition-opacity p-0.5"
+                      className="opacity-0 group-hover:opacity-100 hover:text-rose-600 transition-opacity p-0.5"
                     >
                       <Trash2 className="w-3 h-3" />
                     </button>
@@ -238,12 +241,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
       </div>
 
       {/* Footer System Status */}
-      <div className="p-3 border-t border-zinc-800/60 bg-[#0a0c12] text-[11px] text-zinc-400 flex items-center justify-between">
-        <div className="flex items-center gap-1.5">
-          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+      <div className="p-3 border-t border-[#E2DACF] bg-[#EDE6DC] text-[11px] text-[#4A6354] flex items-center justify-between">
+        <div className="flex items-center gap-1.5 font-medium">
+          <CheckCircle2 className="w-3.5 h-3.5 text-[#2D5A43]" />
           <span>7 Agents Active</span>
         </div>
-        <span className="font-mono text-[10px] text-zinc-400">BPE Engine Ready</span>
+        <span className="font-mono text-[10px] text-[#2D5A43] font-semibold bg-[#DDE9E0] px-1.5 py-0.5 rounded">
+          Local BPE Ready
+        </span>
       </div>
     </aside>
   );
