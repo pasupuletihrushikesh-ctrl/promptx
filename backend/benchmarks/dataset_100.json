@@ -1,0 +1,902 @@
+[
+  {
+    "id": "vague-01",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "write code for database",
+    "expected_reduction_min": 25.0,
+    "expected_quality_min": 75.0,
+    "notes": "Vague database query, missing engine, schema, and language."
+  },
+  {
+    "id": "vague-02",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "make a website for me",
+    "expected_reduction_min": 20.0,
+    "expected_quality_min": 75.0,
+    "notes": "Extremely vague web design request without framework or page structure."
+  },
+  {
+    "id": "vague-03",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "fix this error in my code",
+    "expected_reduction_min": 20.0,
+    "expected_quality_min": 75.0,
+    "notes": "Missing error traceback, source code, and runtime environment."
+  },
+  {
+    "id": "vague-04",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "help me analyze data",
+    "expected_reduction_min": 25.0,
+    "expected_quality_min": 75.0,
+    "notes": "Lacks dataset description, metrics, or goal."
+  },
+  {
+    "id": "vague-05",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "tell me about ai",
+    "expected_reduction_min": 30.0,
+    "expected_quality_min": 75.0,
+    "notes": "Oversimplified topic without scope or angle."
+  },
+  {
+    "id": "vague-06",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "create a marketing campaign",
+    "expected_reduction_min": 25.0,
+    "expected_quality_min": 75.0,
+    "notes": "Missing product, target demographics, and budget."
+  },
+  {
+    "id": "vague-07",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "write an essay on history",
+    "expected_reduction_min": 25.0,
+    "expected_quality_min": 75.0,
+    "notes": "Missing era, length, and thesis."
+  },
+  {
+    "id": "vague-08",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "optimize my backend",
+    "expected_reduction_min": 20.0,
+    "expected_quality_min": 75.0,
+    "notes": "No architecture, bottlenecks, or stack specified."
+  },
+  {
+    "id": "vague-09",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "summarize the article",
+    "expected_reduction_min": 25.0,
+    "expected_quality_min": 75.0,
+    "notes": "Missing article text or link."
+  },
+  {
+    "id": "vague-10",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "make an app like uber",
+    "expected_reduction_min": 25.0,
+    "expected_quality_min": 75.0,
+    "notes": "Overly broad system without modular breakdown."
+  },
+  {
+    "id": "vague-11",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "how do i invest money",
+    "expected_reduction_min": 25.0,
+    "expected_quality_min": 75.0,
+    "notes": "Missing risk tolerance, horizon, and capital."
+  },
+  {
+    "id": "vague-12",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "design a logo",
+    "expected_reduction_min": 20.0,
+    "expected_quality_min": 75.0,
+    "notes": "No brand name, colors, or style guidance."
+  },
+  {
+    "id": "vague-13",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "write a test case",
+    "expected_reduction_min": 20.0,
+    "expected_quality_min": 75.0,
+    "notes": "Missing function signature or edge scenarios."
+  },
+  {
+    "id": "vague-14",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "explain quantum physics",
+    "expected_reduction_min": 25.0,
+    "expected_quality_min": 75.0,
+    "notes": "No audience level or specific phenomenon indicated."
+  },
+  {
+    "id": "vague-15",
+    "category": "Vague prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "recommend some books",
+    "expected_reduction_min": 20.0,
+    "expected_quality_min": 75.0,
+    "notes": "No genre or reading goals specified."
+  },
+  {
+    "id": "redundant-01",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hello there! Good morning AI assistant. I was wondering if you could please kindly take into consideration helping me write a Python script that calculates fibonacci numbers? In order to do this, it is very important that you make sure that you write clean code. As a matter of fact, due to the fact that I am studying algorithms, please give a good answer and do your best. Thank you in advance and let me know if you have questions!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-02",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hey, dear ChatGPT, can you please assist me today? I need help to write a function in JavaScript to filter an array. Make sure that you ensure that you don't mutate the original array. It is very important that you provide a comprehensive and detailed response. In order to achieve this, please provide full code. Thank you so much!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-03",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hello! Could you be so kind as to give an explanation of how Docker containers work? At this point in time, I am learning DevOps. It has the ability to isolate processes, right? Please give an explanation of this in order to help me understand. Thanks a lot for your help!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-04",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Good evening assistant. Please kindly write a query in SQL. In order to get all users who signed up last month, please make sure that you filter by created_at. Be sure to use standard Postgres syntax. Thanks in advance!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-05",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hey friend! I would like you to please write a short poem about space exploration. Please do your best and write something truly wonderful. In order to make it evocative, take into consideration the vast silence of space. Thank you very much!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-06",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hello AI! Can you please help me write a regex? It is very important that you make sure that the regex matches email addresses. Due to the fact that regex can be tricky, please explain each group. Thanks a lot!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-07",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Good day! I am looking for some assistance regarding React hooks. In order to manage local state, could you please write a counter component? Make sure that you use useState. Thank you kindly!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-08",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hi! Please assist me in creating a customer survey. In order to collect feedback on our new mobile app, please provide 5 questions. Make sure that you make them clear. Thanks!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-09",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hello there. I was wondering if you could kindly give me a recipe for chocolate chip cookies? In order to bake them well, please list ingredients and steps. Do your best. Thanks!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-10",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Dear assistant, could you please kindly draft an email to my manager? Due to the fact that I am sick today, I need to request a sick day off. Please make sure that you keep it polite. Thank you in advance!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-11",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hey! Can you please assist me in setting up a Git repository? In order to push code to GitHub, please list the commands. Ensure that you include git init and git remote add. Thanks a lot!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-12",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hello. I would really appreciate if you could kindly explain what an API is. In order to help a non-technical coworker understand, please use an analogy. Thanks in advance!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-13",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Good morning! Could you please help me write a bash script to backup my directory? Make sure that you use rsync. In order to prevent data loss, please test it mentally. Thank you!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-14",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hi assistant, please kindly summarize the benefits of microservices versus monolithic architecture. Take into consideration scalability and team autonomy. Thanks a lot!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-15",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hello! Can you please write a quick workout routine for 20 minutes? In order to stay fit at home, ensure that no equipment is needed. Thank you in advance!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-16",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hey there, please kindly write a Python script that reads a CSV file with pandas and prints the mean of a column named 'score'. Make sure that you handle missing values. Thanks!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-17",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Good day AI. I need help to write a cold outreach message for LinkedIn. In order to connect with engineering leaders, make sure that you keep it concise and punchy. Thanks!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-18",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hello assistant! Could you please give an explanation of the differences between TCP and UDP? In order to prepare for my networking exam, make sure you highlight reliability and speed. Thanks!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-19",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Hey! Can you please kindly help me write a SQL migration to add an index on user_id in the orders table? Ensure that you create it concurrently. Thank you very much!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "redundant-20",
+    "category": "Long redundant prompts",
+    "difficulty": "Easy",
+    "raw_prompt": "Good evening! I was wondering if you could please provide a checklist for deploying a production web application? Make sure that you include SSL, database backups, and monitoring. Thanks in advance!",
+    "expected_reduction_min": 35.0,
+    "expected_quality_min": 85.0,
+    "notes": "Contains heavy conversational filler and polite fluff that should be pruned without losing the core task."
+  },
+  {
+    "id": "code-01",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Implement an asynchronous LRU Cache in Python using asyncio.Lock, collections.OrderedDict, with a max capacity of 1000 items and TTL expiration per item. Provide complete unit tests using pytest-asyncio.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-02",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write a TypeScript React hook `useDebouncedFetch` that cancels in-flight AbortController requests on unmount or input change, handles error retry with exponential backoff, and provides full generic type inference.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-03",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Build a high-performance concurrent worker pool in Go that consumes tasks from a buffered channel, limits active goroutines to runtime.NumCPU, and gracefully shuts down on SIGINT with context cancellation.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-04",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Create a Rust macro that implements a custom serialization trait for structs, supporting skip attributes and field renaming with zero runtime allocation overhead.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-05",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write a PostgreSQL stored procedure with PL/pgSQL to process financial ledger transfers with row-level pessimistic locking (SELECT FOR UPDATE) to eliminate race conditions under concurrent execution.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-06",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Implement an A* pathfinding algorithm on a 2D weighted grid in Python with Euclidean heuristic, handling diagonal movement and dynamic obstacle updates with O(log N) priority queue updates.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-07",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Build a custom Redux middleware in TypeScript for offline action queueing and IndexedDB synchronization upon network reconnection.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-08",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write a C++20 coroutine generator for infinite prime number generation with Sieve of Eratosthenes segmented buffering and minimal memory footprint.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-09",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Implement a Kubernetes mutating admission webhook in Go that validates pod resource limits and injects an OpenTelemetry sidecar container if annotations match.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-10",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write an optimized PyTorch custom autograd Function implementing memory-efficient fused layer normalization with custom CUDA/C++ kernel bindings.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-11",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Build a distributed rate limiter in Python using Redis sliding window log with Lua script atomicity and client-side fallback cache.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-12",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Implement an event-driven CQRS event store in TypeScript using DynamoDB streams and SNS/SQS event publishing with idempotency key deduplication.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-13",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write a memory-mapped binary file parser in Rust using memmap2 that deserializes 10M record telemetry logs concurrently using Rayon.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-14",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Create a GraphQL schema directive in Apollo Server (Node.js) that enforces role-based field-level permissions via JWT token inspection.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "code-15",
+    "category": "Complex coding prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Implement an in-memory B-Tree index in Java supporting range queries, node splitting, rebalancing, and concurrent read access via StampedLock.",
+    "expected_reduction_min": 5.0,
+    "expected_quality_min": 92.0,
+    "notes": "Highly technical coding prompt; must preserve exact function names, types, and constraints while formatting clearly."
+  },
+  {
+    "id": "constraint-01",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write a product launch announcement for a new B2B SaaS analytics tool. Constraints: Exactly 150 words, tone must be authoritative and visionary, mention ROI and latency reduction, do not use the words 'game-changer' or 'disruptive', and conclude with a single CTA link placeholder.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-02",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Generate a system architecture proposal for a multi-tenant healthcare app. Constraints: Must adhere to HIPAA compliance, utilize AWS multi-region active-active database replication, achieve RTO under 5 minutes, RPO under 10 seconds, and render architecture as an ASCII diagram.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-03",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Draft a legal privacy policy summary for GDPR compliance. Constraints: Exactly 4 bullet points, maximum 80 words total, written at a 6th-grade reading level, and explicitly addressing data deletion requests.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-04",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Create a technical spec for an e-commerce checkout API. Constraints: RESTful JSON over HTTPS, idempotent POST via Idempotency-Key header, response latency SLA < 150ms at p99, and strict error code catalog (400, 402, 409, 500).",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-05",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write an executive briefing on AI safety. Constraints: 3 paragraphs max, target audience is non-technical board of directors, no jargon without definition, include estimated budget allocation percentage.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-06",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Draft a technical interview rubric for Senior Staff Software Engineer. Constraints: 4 core evaluation competencies, 1-to-5 scoring criteria per rubric, focus on distributed systems trade-offs and team mentorship.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-07",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write an incident postmortem report for a 2-hour payment gateway outage. Constraints: Follow Google SRE format, include timeline, root cause, impact metrics, action items with owners and severity P0-P2.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-08",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Design a CLI tool UX specification for a cloud deployment utility. Constraints: POSIX compliant flag parsing, support both human-readable stdout and --json output flags, provide error exit codes 1-127.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-09",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Draft a migration plan from monolithic Rails to Go microservices. Constraints: Zero-downtime Strangler Fig pattern, dual-write consistency verification period of 14 days, automated rollback criteria.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-10",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write a marketing email copy for a cybersecurity webinar. Constraints: Under 90 words, subject line under 40 characters, highlight ransomware mitigation, include FOMO urgency with 48-hour deadline.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-11",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Create a disaster recovery SOP for PostgreSQL failover. Constraints: Step-by-step checklist, include exact bash commands for pg_ctl promote, verify replication lag is zero before DNS switch.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-12",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Draft a software licensing agreement clause regarding intellectual property ownership. Constraints: Plain English readability, specify work-for-hire provisions, include perpetual non-exclusive license backup.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-13",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write an RFC for adopting GraphQL federation in a mobile ecosystem. Constraints: Outline schema stitching migration, client caching strategy, error handling RFC-7807 compliance.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-14",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Design a customer churn prediction model deployment pipeline. Constraints: Sub-50ms inference latency, feature store integration with Feast, automated drift detection alert threshold at PSI > 0.2.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "constraint-15",
+    "category": "Multi-constraint prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Write a technical blog post intro about Rust async runtimes. Constraints: Under 120 words, hook the reader with a common Tokio deadlock pitfall, avoid buzzwords, provide a clear roadmap.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 94.0,
+    "notes": "Strict multi-constraint preservation test; all negative and positive bounds must survive optimization."
+  },
+  {
+    "id": "reason-01",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Solve this probability problem step by step: A bag contains 4 red, 6 blue, and 5 green marbles. Three marbles are drawn successively without replacement. What is the probability that all three marbles are different colors? Express answer as a simplified fraction.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-02",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Prove by mathematical induction that for every positive integer n, the sum of cubes 1^3 + 2^3 + ... + n^3 = (n(n+1)/2)^2. Clearly state the base case, inductive hypothesis, and induction step.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-03",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Analyze the game-theoretic Nash equilibrium for two competing ride-share platforms deciding surge pricing policies during peak hours with payoff matrix A and B.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-04",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Evaluate the computational complexity and space-time trade-off of Floyd-Warshall versus Johnson's algorithm for all-pairs shortest paths on sparse graphs with negative edge weights.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-05",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Solve the Monty Hall problem variation where there are 5 doors, 1 car, 4 goats, and the host opens 2 goat doors before asking if the contestant wants to switch. Calculate exact switching odds.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-06",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Determine the maximum flow in a network with source s, sink t, and capacity matrix using the Edmonds-Karp algorithm. Show each augmenting path and residual network state.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-07",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Evaluate whether P = NP implies one-way functions cannot exist. Provide a rigorous theoretical computer science proof outline citing Levin and Cook.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-08",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Calculate the eigenvalue decomposition and condition number of a given 3x3 Hilbert matrix and explain numerical instability implications in linear regression.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-09",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Solve the twin paradox in Special Relativity using Minkowski spacetime diagrams and Lorentz transformation equations from the perspective of both observers.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-10",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Deduce the winning strategy for the combinatorial game Nim with heap sizes (3, 4, 5) using Sprague-Grundy theorem and nim-sum XOR calculations.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-11",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Prove that the square root of 3 is irrational using contradiction and prime factorization theorem.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-12",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Calculate the Black-Scholes European call option price given S0=100, K=105, r=0.05, sigma=0.2, T=0.5 years with N(d1) and N(d2) normal distribution bounds.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-13",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Analyze the Byzantine Generals Problem in asynchronous networks without digital signatures and prove why consensus is impossible with 3m+1 nodes where m are traitors.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-14",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Derive the backpropagation gradient updates for a multi-head self-attention layer with respect to Query, Key, and Value projection weight matrices.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "reason-15",
+    "category": "Reasoning prompts",
+    "difficulty": "Hard",
+    "raw_prompt": "Determine the optimal portfolio weights minimizing variance under Markowitz efficient frontier with expected returns vector mu and covariance matrix Sigma.",
+    "expected_reduction_min": 10.0,
+    "expected_quality_min": 92.0,
+    "notes": "Decomposition prompting required; verify logical sequencing and deduction validity."
+  },
+  {
+    "id": "struct-01",
+    "category": "Structured output prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "Parse the following customer feedback text and output a JSON object containing keys: 'sentiment' (positive/neutral/negative), 'urgency' (1-5), 'extracted_entities' (array), and 'suggested_action'. Output valid JSON only.",
+    "expected_reduction_min": 15.0,
+    "expected_quality_min": 95.0,
+    "notes": "Strict schema adherence; delimiter isolation and format guards required."
+  },
+  {
+    "id": "struct-02",
+    "category": "Structured output prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "Extract tabular comparison of 5 relational database engines (Postgres, MySQL, Oracle, SQL Server, CockroachDB) with columns: Engine, ACID Compliance, Sharding Support, License, Max Table Size. Format as Markdown table.",
+    "expected_reduction_min": 15.0,
+    "expected_quality_min": 95.0,
+    "notes": "Strict schema adherence; delimiter isolation and format guards required."
+  },
+  {
+    "id": "struct-03",
+    "category": "Structured output prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "Generate an OpenAPI 3.0 YAML specification for a User authentication service with endpoints: POST /auth/login, POST /auth/register, POST /auth/refresh, GET /auth/me.",
+    "expected_reduction_min": 15.0,
+    "expected_quality_min": 95.0,
+    "notes": "Strict schema adherence; delimiter isolation and format guards required."
+  },
+  {
+    "id": "struct-04",
+    "category": "Structured output prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "Transform the given unstructured text into a CSV format with headers: TransactionID, Timestamp, AmountUSD, MerchantCategory, IsFraud. No commentary.",
+    "expected_reduction_min": 15.0,
+    "expected_quality_min": 95.0,
+    "notes": "Strict schema adherence; delimiter isolation and format guards required."
+  },
+  {
+    "id": "struct-05",
+    "category": "Structured output prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "Convert this requirements document into a strict Mermaid flowchart diagram illustrating user onboarding logic and exception branches.",
+    "expected_reduction_min": 15.0,
+    "expected_quality_min": 95.0,
+    "notes": "Strict schema adherence; delimiter isolation and format guards required."
+  },
+  {
+    "id": "struct-06",
+    "category": "Structured output prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "Extract financial statement balance sheet items from this earnings call snippet into an RFC-8259 compliant JSON document with numeric currency values.",
+    "expected_reduction_min": 15.0,
+    "expected_quality_min": 95.0,
+    "notes": "Strict schema adherence; delimiter isolation and format guards required."
+  },
+  {
+    "id": "struct-07",
+    "category": "Structured output prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "Build a LaTeX table comparing 4 deep learning optimizer algorithms (SGD, Adam, AdamW, Lion) across convergence rate, memory usage, and hyperparameter sensitivity.",
+    "expected_reduction_min": 15.0,
+    "expected_quality_min": 95.0,
+    "notes": "Strict schema adherence; delimiter isolation and format guards required."
+  },
+  {
+    "id": "struct-08",
+    "category": "Structured output prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "Parse this server error log and output a JSON array of error events with fields: timestamp, severity, service_name, stack_trace, root_cause.",
+    "expected_reduction_min": 15.0,
+    "expected_quality_min": 95.0,
+    "notes": "Strict schema adherence; delimiter isolation and format guards required."
+  },
+  {
+    "id": "struct-09",
+    "category": "Structured output prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "Generate a Docker Compose YAML file defining a full stack: FastAPI backend, PostgreSQL 16 database with healthcheck, Redis cache, and Traefik reverse proxy.",
+    "expected_reduction_min": 15.0,
+    "expected_quality_min": 95.0,
+    "notes": "Strict schema adherence; delimiter isolation and format guards required."
+  },
+  {
+    "id": "struct-10",
+    "category": "Structured output prompts",
+    "difficulty": "Medium",
+    "raw_prompt": "Generate a JSON Schema (Draft 7) definition that validates a user profile containing email, age (18-120), addresses array, and optional preferences object.",
+    "expected_reduction_min": 15.0,
+    "expected_quality_min": 95.0,
+    "notes": "Strict schema adherence; delimiter isolation and format guards required."
+  },
+  {
+    "id": "short-01",
+    "category": "Short prompts that should not be compressed",
+    "difficulty": "Easy",
+    "raw_prompt": "Explain quicksort in O(n log n) time.",
+    "expected_reduction_min": 0.0,
+    "expected_quality_min": 90.0,
+    "notes": "High signal-to-noise ratio. Excessive compression would damage technical precision and semantic intent."
+  },
+  {
+    "id": "short-02",
+    "category": "Short prompts that should not be compressed",
+    "difficulty": "Easy",
+    "raw_prompt": "Define idempotency in REST APIs.",
+    "expected_reduction_min": 0.0,
+    "expected_quality_min": 90.0,
+    "notes": "High signal-to-noise ratio. Excessive compression would damage technical precision and semantic intent."
+  },
+  {
+    "id": "short-03",
+    "category": "Short prompts that should not be compressed",
+    "difficulty": "Easy",
+    "raw_prompt": "What is the CAP theorem?",
+    "expected_reduction_min": 0.0,
+    "expected_quality_min": 90.0,
+    "notes": "High signal-to-noise ratio. Excessive compression would damage technical precision and semantic intent."
+  },
+  {
+    "id": "short-04",
+    "category": "Short prompts that should not be compressed",
+    "difficulty": "Easy",
+    "raw_prompt": "Differentiate between processes and threads.",
+    "expected_reduction_min": 0.0,
+    "expected_quality_min": 90.0,
+    "notes": "High signal-to-noise ratio. Excessive compression would damage technical precision and semantic intent."
+  },
+  {
+    "id": "short-05",
+    "category": "Short prompts that should not be compressed",
+    "difficulty": "Easy",
+    "raw_prompt": "Write a regex to validate IPv4 addresses.",
+    "expected_reduction_min": 0.0,
+    "expected_quality_min": 90.0,
+    "notes": "High signal-to-noise ratio. Excessive compression would damage technical precision and semantic intent."
+  },
+  {
+    "id": "short-06",
+    "category": "Short prompts that should not be compressed",
+    "difficulty": "Easy",
+    "raw_prompt": "How does a bloom filter work?",
+    "expected_reduction_min": 0.0,
+    "expected_quality_min": 90.0,
+    "notes": "High signal-to-noise ratio. Excessive compression would damage technical precision and semantic intent."
+  },
+  {
+    "id": "short-07",
+    "category": "Short prompts that should not be compressed",
+    "difficulty": "Easy",
+    "raw_prompt": "Explain copy-on-write memory optimization.",
+    "expected_reduction_min": 0.0,
+    "expected_quality_min": 90.0,
+    "notes": "High signal-to-noise ratio. Excessive compression would damage technical precision and semantic intent."
+  },
+  {
+    "id": "short-08",
+    "category": "Short prompts that should not be compressed",
+    "difficulty": "Easy",
+    "raw_prompt": "Define Amdahl's law with formula.",
+    "expected_reduction_min": 0.0,
+    "expected_quality_min": 90.0,
+    "notes": "High signal-to-noise ratio. Excessive compression would damage technical precision and semantic intent."
+  },
+  {
+    "id": "short-09",
+    "category": "Short prompts that should not be compressed",
+    "difficulty": "Easy",
+    "raw_prompt": "What is vector quantization in LLMs?",
+    "expected_reduction_min": 0.0,
+    "expected_quality_min": 90.0,
+    "notes": "High signal-to-noise ratio. Excessive compression would damage technical precision and semantic intent."
+  },
+  {
+    "id": "short-10",
+    "category": "Short prompts that should not be compressed",
+    "difficulty": "Easy",
+    "raw_prompt": "Differentiate TCP SYN cookies and backlog queue.",
+    "expected_reduction_min": 0.0,
+    "expected_quality_min": 90.0,
+    "notes": "High signal-to-noise ratio. Excessive compression would damage technical precision and semantic intent."
+  }
+]

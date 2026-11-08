@@ -1,0 +1,1010 @@
+{
+  "total_prompts": 100,
+  "passed_prompts": 99,
+  "pass_rate_percent": 99.0,
+  "average_token_reduction_percent": 16.39,
+  "average_quality_score": 95.39,
+  "average_latency_ms": 0.31,
+  "results": [
+    {
+      "item_id": "vague-01",
+      "category": "Vague prompts",
+      "raw_tokens": 8,
+      "optimized_tokens": 18,
+      "reduction_percent": -125.0,
+      "quality_score": 96.1,
+      "latency_ms": 2.39,
+      "passed": true
+    },
+    {
+      "item_id": "vague-02",
+      "category": "Vague prompts",
+      "raw_tokens": 6,
+      "optimized_tokens": 7,
+      "reduction_percent": -16.67,
+      "quality_score": 93.8,
+      "latency_ms": 0.23,
+      "passed": true
+    },
+    {
+      "item_id": "vague-03",
+      "category": "Vague prompts",
+      "raw_tokens": 9,
+      "optimized_tokens": 19,
+      "reduction_percent": -111.11,
+      "quality_score": 95.7,
+      "latency_ms": 0.19,
+      "passed": true
+    },
+    {
+      "item_id": "vague-04",
+      "category": "Vague prompts",
+      "raw_tokens": 6,
+      "optimized_tokens": 5,
+      "reduction_percent": 16.67,
+      "quality_score": 95.4,
+      "latency_ms": 0.17,
+      "passed": true
+    },
+    {
+      "item_id": "vague-05",
+      "category": "Vague prompts",
+      "raw_tokens": 5,
+      "optimized_tokens": 6,
+      "reduction_percent": -20.0,
+      "quality_score": 94.2,
+      "latency_ms": 0.15,
+      "passed": true
+    },
+    {
+      "item_id": "vague-06",
+      "category": "Vague prompts",
+      "raw_tokens": 9,
+      "optimized_tokens": 10,
+      "reduction_percent": -11.11,
+      "quality_score": 94.2,
+      "latency_ms": 0.16,
+      "passed": true
+    },
+    {
+      "item_id": "vague-07",
+      "category": "Vague prompts",
+      "raw_tokens": 8,
+      "optimized_tokens": 9,
+      "reduction_percent": -12.5,
+      "quality_score": 93.8,
+      "latency_ms": 0.17,
+      "passed": true
+    },
+    {
+      "item_id": "vague-08",
+      "category": "Vague prompts",
+      "raw_tokens": 5,
+      "optimized_tokens": 6,
+      "reduction_percent": -20.0,
+      "quality_score": 94.2,
+      "latency_ms": 0.15,
+      "passed": true
+    },
+    {
+      "item_id": "vague-09",
+      "category": "Vague prompts",
+      "raw_tokens": 6,
+      "optimized_tokens": 7,
+      "reduction_percent": -16.67,
+      "quality_score": 94.2,
+      "latency_ms": 0.15,
+      "passed": true
+    },
+    {
+      "item_id": "vague-10",
+      "category": "Vague prompts",
+      "raw_tokens": 7,
+      "optimized_tokens": 8,
+      "reduction_percent": -14.29,
+      "quality_score": 93.8,
+      "latency_ms": 0.18,
+      "passed": true
+    },
+    {
+      "item_id": "vague-11",
+      "category": "Vague prompts",
+      "raw_tokens": 7,
+      "optimized_tokens": 8,
+      "reduction_percent": -14.29,
+      "quality_score": 93.8,
+      "latency_ms": 0.16,
+      "passed": true
+    },
+    {
+      "item_id": "vague-12",
+      "category": "Vague prompts",
+      "raw_tokens": 5,
+      "optimized_tokens": 13,
+      "reduction_percent": -160.0,
+      "quality_score": 95.8,
+      "latency_ms": 0.16,
+      "passed": true
+    },
+    {
+      "item_id": "vague-13",
+      "category": "Vague prompts",
+      "raw_tokens": 7,
+      "optimized_tokens": 8,
+      "reduction_percent": -14.29,
+      "quality_score": 94.2,
+      "latency_ms": 0.16,
+      "passed": true
+    },
+    {
+      "item_id": "vague-14",
+      "category": "Vague prompts",
+      "raw_tokens": 6,
+      "optimized_tokens": 7,
+      "reduction_percent": -16.67,
+      "quality_score": 94.2,
+      "latency_ms": 0.15,
+      "passed": true
+    },
+    {
+      "item_id": "vague-15",
+      "category": "Vague prompts",
+      "raw_tokens": 7,
+      "optimized_tokens": 8,
+      "reduction_percent": -14.29,
+      "quality_score": 94.2,
+      "latency_ms": 0.15,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-01",
+      "category": "Long redundant prompts",
+      "raw_tokens": 147,
+      "optimized_tokens": 55,
+      "reduction_percent": 62.59,
+      "quality_score": 97.6,
+      "latency_ms": 0.58,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-02",
+      "category": "Long redundant prompts",
+      "raw_tokens": 113,
+      "optimized_tokens": 40,
+      "reduction_percent": 64.6,
+      "quality_score": 96.1,
+      "latency_ms": 0.44,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-03",
+      "category": "Long redundant prompts",
+      "raw_tokens": 92,
+      "optimized_tokens": 22,
+      "reduction_percent": 76.09,
+      "quality_score": 95.0,
+      "latency_ms": 0.41,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-04",
+      "category": "Long redundant prompts",
+      "raw_tokens": 73,
+      "optimized_tokens": 22,
+      "reduction_percent": 69.86,
+      "quality_score": 96.6,
+      "latency_ms": 0.34,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-05",
+      "category": "Long redundant prompts",
+      "raw_tokens": 83,
+      "optimized_tokens": 17,
+      "reduction_percent": 79.52,
+      "quality_score": 93.5,
+      "latency_ms": 0.34,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-06",
+      "category": "Long redundant prompts",
+      "raw_tokens": 72,
+      "optimized_tokens": 6,
+      "reduction_percent": 91.67,
+      "quality_score": 95.0,
+      "latency_ms": 0.32,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-07",
+      "category": "Long redundant prompts",
+      "raw_tokens": 64,
+      "optimized_tokens": 25,
+      "reduction_percent": 60.94,
+      "quality_score": 96.6,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-08",
+      "category": "Long redundant prompts",
+      "raw_tokens": 60,
+      "optimized_tokens": 9,
+      "reduction_percent": 85.0,
+      "quality_score": 95.0,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-09",
+      "category": "Long redundant prompts",
+      "raw_tokens": 62,
+      "optimized_tokens": 14,
+      "reduction_percent": 77.42,
+      "quality_score": 95.0,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-10",
+      "category": "Long redundant prompts",
+      "raw_tokens": 70,
+      "optimized_tokens": 14,
+      "reduction_percent": 80.0,
+      "quality_score": 93.5,
+      "latency_ms": 0.32,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-11",
+      "category": "Long redundant prompts",
+      "raw_tokens": 61,
+      "optimized_tokens": 18,
+      "reduction_percent": 70.49,
+      "quality_score": 96.9,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-12",
+      "category": "Long redundant prompts",
+      "raw_tokens": 57,
+      "optimized_tokens": 22,
+      "reduction_percent": 61.4,
+      "quality_score": 95.0,
+      "latency_ms": 0.3,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-13",
+      "category": "Long redundant prompts",
+      "raw_tokens": 62,
+      "optimized_tokens": 31,
+      "reduction_percent": 50.0,
+      "quality_score": 97.6,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-14",
+      "category": "Long redundant prompts",
+      "raw_tokens": 54,
+      "optimized_tokens": 30,
+      "reduction_percent": 44.44,
+      "quality_score": 93.5,
+      "latency_ms": 0.28,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-15",
+      "category": "Long redundant prompts",
+      "raw_tokens": 51,
+      "optimized_tokens": 14,
+      "reduction_percent": 72.55,
+      "quality_score": 95.0,
+      "latency_ms": 0.34,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-16",
+      "category": "Long redundant prompts",
+      "raw_tokens": 60,
+      "optimized_tokens": 50,
+      "reduction_percent": 16.67,
+      "quality_score": 95.1,
+      "latency_ms": 0.34,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-17",
+      "category": "Long redundant prompts",
+      "raw_tokens": 58,
+      "optimized_tokens": 11,
+      "reduction_percent": 81.03,
+      "quality_score": 96.6,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-18",
+      "category": "Long redundant prompts",
+      "raw_tokens": 60,
+      "optimized_tokens": 16,
+      "reduction_percent": 73.33,
+      "quality_score": 95.0,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-19",
+      "category": "Long redundant prompts",
+      "raw_tokens": 56,
+      "optimized_tokens": 33,
+      "reduction_percent": 41.07,
+      "quality_score": 96.9,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "redundant-20",
+      "category": "Long redundant prompts",
+      "raw_tokens": 62,
+      "optimized_tokens": 26,
+      "reduction_percent": 58.06,
+      "quality_score": 96.6,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "code-01",
+      "category": "Complex coding prompts",
+      "raw_tokens": 67,
+      "optimized_tokens": 54,
+      "reduction_percent": 19.4,
+      "quality_score": 96.6,
+      "latency_ms": 0.35,
+      "passed": true
+    },
+    {
+      "item_id": "code-02",
+      "category": "Complex coding prompts",
+      "raw_tokens": 69,
+      "optimized_tokens": 63,
+      "reduction_percent": 8.7,
+      "quality_score": 96.4,
+      "latency_ms": 0.34,
+      "passed": true
+    },
+    {
+      "item_id": "code-03",
+      "category": "Complex coding prompts",
+      "raw_tokens": 68,
+      "optimized_tokens": 54,
+      "reduction_percent": 20.59,
+      "quality_score": 96.6,
+      "latency_ms": 0.34,
+      "passed": true
+    },
+    {
+      "item_id": "code-04",
+      "category": "Complex coding prompts",
+      "raw_tokens": 52,
+      "optimized_tokens": 53,
+      "reduction_percent": -1.92,
+      "quality_score": 95.4,
+      "latency_ms": 0.3,
+      "passed": true
+    },
+    {
+      "item_id": "code-05",
+      "category": "Complex coding prompts",
+      "raw_tokens": 64,
+      "optimized_tokens": 52,
+      "reduction_percent": 18.75,
+      "quality_score": 96.6,
+      "latency_ms": 0.32,
+      "passed": true
+    },
+    {
+      "item_id": "code-06",
+      "category": "Complex coding prompts",
+      "raw_tokens": 65,
+      "optimized_tokens": 62,
+      "reduction_percent": 4.62,
+      "quality_score": 95.4,
+      "latency_ms": 0.33,
+      "passed": true
+    },
+    {
+      "item_id": "code-07",
+      "category": "Complex coding prompts",
+      "raw_tokens": 39,
+      "optimized_tokens": 57,
+      "reduction_percent": -46.15,
+      "quality_score": 96.4,
+      "latency_ms": 0.42,
+      "passed": true
+    },
+    {
+      "item_id": "code-08",
+      "category": "Complex coding prompts",
+      "raw_tokens": 47,
+      "optimized_tokens": 52,
+      "reduction_percent": -10.64,
+      "quality_score": 95.4,
+      "latency_ms": 0.38,
+      "passed": true
+    },
+    {
+      "item_id": "code-09",
+      "category": "Complex coding prompts",
+      "raw_tokens": 48,
+      "optimized_tokens": 49,
+      "reduction_percent": -2.08,
+      "quality_score": 95.4,
+      "latency_ms": 0.3,
+      "passed": true
+    },
+    {
+      "item_id": "code-10",
+      "category": "Complex coding prompts",
+      "raw_tokens": 49,
+      "optimized_tokens": 64,
+      "reduction_percent": -30.61,
+      "quality_score": 96.4,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "code-11",
+      "category": "Complex coding prompts",
+      "raw_tokens": 41,
+      "optimized_tokens": 58,
+      "reduction_percent": -41.46,
+      "quality_score": 96.4,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "code-12",
+      "category": "Complex coding prompts",
+      "raw_tokens": 46,
+      "optimized_tokens": 62,
+      "reduction_percent": -34.78,
+      "quality_score": 96.4,
+      "latency_ms": 0.3,
+      "passed": true
+    },
+    {
+      "item_id": "code-13",
+      "category": "Complex coding prompts",
+      "raw_tokens": 46,
+      "optimized_tokens": 54,
+      "reduction_percent": -17.39,
+      "quality_score": 95.4,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "code-14",
+      "category": "Complex coding prompts",
+      "raw_tokens": 46,
+      "optimized_tokens": 46,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.28,
+      "passed": true
+    },
+    {
+      "item_id": "code-15",
+      "category": "Complex coding prompts",
+      "raw_tokens": 47,
+      "optimized_tokens": 54,
+      "reduction_percent": -14.89,
+      "quality_score": 95.4,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-01",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 93,
+      "optimized_tokens": 25,
+      "reduction_percent": 73.12,
+      "quality_score": 95.0,
+      "latency_ms": 0.38,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-02",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 89,
+      "optimized_tokens": 24,
+      "reduction_percent": 73.03,
+      "quality_score": 95.0,
+      "latency_ms": 0.35,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-03",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 68,
+      "optimized_tokens": 42,
+      "reduction_percent": 38.24,
+      "quality_score": 97.6,
+      "latency_ms": 0.33,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-04",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 77,
+      "optimized_tokens": 43,
+      "reduction_percent": 44.16,
+      "quality_score": 97.6,
+      "latency_ms": 0.37,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-05",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 65,
+      "optimized_tokens": 21,
+      "reduction_percent": 67.69,
+      "quality_score": 96.6,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-06",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 71,
+      "optimized_tokens": 23,
+      "reduction_percent": 67.61,
+      "quality_score": 95.0,
+      "latency_ms": 0.3,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-07",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 69,
+      "optimized_tokens": 30,
+      "reduction_percent": 56.52,
+      "quality_score": 96.6,
+      "latency_ms": 0.32,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-08",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 66,
+      "optimized_tokens": 45,
+      "reduction_percent": 31.82,
+      "quality_score": 97.6,
+      "latency_ms": 0.32,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-09",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 67,
+      "optimized_tokens": 29,
+      "reduction_percent": 56.72,
+      "quality_score": 96.6,
+      "latency_ms": 0.3,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-10",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 65,
+      "optimized_tokens": 32,
+      "reduction_percent": 50.77,
+      "quality_score": 96.6,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-11",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 63,
+      "optimized_tokens": 25,
+      "reduction_percent": 60.32,
+      "quality_score": 96.6,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-12",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 67,
+      "optimized_tokens": 28,
+      "reduction_percent": 58.21,
+      "quality_score": 95.0,
+      "latency_ms": 0.28,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-13",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 56,
+      "optimized_tokens": 33,
+      "reduction_percent": 41.07,
+      "quality_score": 96.6,
+      "latency_ms": 0.28,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-14",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 66,
+      "optimized_tokens": 20,
+      "reduction_percent": 69.7,
+      "quality_score": 95.0,
+      "latency_ms": 0.28,
+      "passed": true
+    },
+    {
+      "item_id": "constraint-15",
+      "category": "Multi-constraint prompts",
+      "raw_tokens": 64,
+      "optimized_tokens": 43,
+      "reduction_percent": 32.81,
+      "quality_score": 96.6,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "reason-01",
+      "category": "Reasoning prompts",
+      "raw_tokens": 85,
+      "optimized_tokens": 34,
+      "reduction_percent": 60.0,
+      "quality_score": 95.0,
+      "latency_ms": 0.38,
+      "passed": true
+    },
+    {
+      "item_id": "reason-02",
+      "category": "Reasoning prompts",
+      "raw_tokens": 76,
+      "optimized_tokens": 35,
+      "reduction_percent": 53.95,
+      "quality_score": 95.0,
+      "latency_ms": 0.35,
+      "passed": true
+    },
+    {
+      "item_id": "reason-03",
+      "category": "Reasoning prompts",
+      "raw_tokens": 53,
+      "optimized_tokens": 46,
+      "reduction_percent": 13.21,
+      "quality_score": 95.0,
+      "latency_ms": 0.28,
+      "passed": true
+    },
+    {
+      "item_id": "reason-04",
+      "category": "Reasoning prompts",
+      "raw_tokens": 58,
+      "optimized_tokens": 51,
+      "reduction_percent": 12.07,
+      "quality_score": 96.6,
+      "latency_ms": 0.32,
+      "passed": true
+    },
+    {
+      "item_id": "reason-05",
+      "category": "Reasoning prompts",
+      "raw_tokens": 65,
+      "optimized_tokens": 55,
+      "reduction_percent": 15.38,
+      "quality_score": 96.6,
+      "latency_ms": 0.35,
+      "passed": true
+    },
+    {
+      "item_id": "reason-06",
+      "category": "Reasoning prompts",
+      "raw_tokens": 57,
+      "optimized_tokens": 46,
+      "reduction_percent": 19.3,
+      "quality_score": 96.6,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "reason-07",
+      "category": "Reasoning prompts",
+      "raw_tokens": 46,
+      "optimized_tokens": 36,
+      "reduction_percent": 21.74,
+      "quality_score": 97.6,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "reason-08",
+      "category": "Reasoning prompts",
+      "raw_tokens": 48,
+      "optimized_tokens": 42,
+      "reduction_percent": 12.5,
+      "quality_score": 95.0,
+      "latency_ms": 0.27,
+      "passed": true
+    },
+    {
+      "item_id": "reason-09",
+      "category": "Reasoning prompts",
+      "raw_tokens": 47,
+      "optimized_tokens": 41,
+      "reduction_percent": 12.77,
+      "quality_score": 95.7,
+      "latency_ms": 0.26,
+      "passed": true
+    },
+    {
+      "item_id": "reason-10",
+      "category": "Reasoning prompts",
+      "raw_tokens": 49,
+      "optimized_tokens": 47,
+      "reduction_percent": 4.08,
+      "quality_score": 93.8,
+      "latency_ms": 0.3,
+      "passed": true
+    },
+    {
+      "item_id": "reason-11",
+      "category": "Reasoning prompts",
+      "raw_tokens": 31,
+      "optimized_tokens": 31,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.22,
+      "passed": true
+    },
+    {
+      "item_id": "reason-12",
+      "category": "Reasoning prompts",
+      "raw_tokens": 71,
+      "optimized_tokens": 66,
+      "reduction_percent": 7.04,
+      "quality_score": 93.8,
+      "latency_ms": 0.38,
+      "passed": true
+    },
+    {
+      "item_id": "reason-13",
+      "category": "Reasoning prompts",
+      "raw_tokens": 53,
+      "optimized_tokens": 42,
+      "reduction_percent": 20.75,
+      "quality_score": 95.0,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "reason-14",
+      "category": "Reasoning prompts",
+      "raw_tokens": 48,
+      "optimized_tokens": 45,
+      "reduction_percent": 6.25,
+      "quality_score": 93.8,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "reason-15",
+      "category": "Reasoning prompts",
+      "raw_tokens": 47,
+      "optimized_tokens": 42,
+      "reduction_percent": 10.64,
+      "quality_score": 95.0,
+      "latency_ms": 0.26,
+      "passed": true
+    },
+    {
+      "item_id": "struct-01",
+      "category": "Structured output prompts",
+      "raw_tokens": 82,
+      "optimized_tokens": 72,
+      "reduction_percent": 12.2,
+      "quality_score": 97.6,
+      "latency_ms": 0.38,
+      "passed": true
+    },
+    {
+      "item_id": "struct-02",
+      "category": "Structured output prompts",
+      "raw_tokens": 73,
+      "optimized_tokens": 64,
+      "reduction_percent": 12.33,
+      "quality_score": 97.6,
+      "latency_ms": 0.36,
+      "passed": true
+    },
+    {
+      "item_id": "struct-03",
+      "category": "Structured output prompts",
+      "raw_tokens": 60,
+      "optimized_tokens": 49,
+      "reduction_percent": 18.33,
+      "quality_score": 95.0,
+      "latency_ms": 0.32,
+      "passed": true
+    },
+    {
+      "item_id": "struct-04",
+      "category": "Structured output prompts",
+      "raw_tokens": 50,
+      "optimized_tokens": 52,
+      "reduction_percent": -4.0,
+      "quality_score": 96.1,
+      "latency_ms": 0.28,
+      "passed": true
+    },
+    {
+      "item_id": "struct-05",
+      "category": "Structured output prompts",
+      "raw_tokens": 42,
+      "optimized_tokens": 42,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.26,
+      "passed": false
+    },
+    {
+      "item_id": "struct-06",
+      "category": "Structured output prompts",
+      "raw_tokens": 49,
+      "optimized_tokens": 69,
+      "reduction_percent": -40.82,
+      "quality_score": 96.4,
+      "latency_ms": 0.29,
+      "passed": true
+    },
+    {
+      "item_id": "struct-07",
+      "category": "Structured output prompts",
+      "raw_tokens": 56,
+      "optimized_tokens": 57,
+      "reduction_percent": -1.79,
+      "quality_score": 95.7,
+      "latency_ms": 0.32,
+      "passed": true
+    },
+    {
+      "item_id": "struct-08",
+      "category": "Structured output prompts",
+      "raw_tokens": 52,
+      "optimized_tokens": 76,
+      "reduction_percent": -46.15,
+      "quality_score": 96.4,
+      "latency_ms": 0.31,
+      "passed": true
+    },
+    {
+      "item_id": "struct-09",
+      "category": "Structured output prompts",
+      "raw_tokens": 51,
+      "optimized_tokens": 53,
+      "reduction_percent": -3.92,
+      "quality_score": 95.4,
+      "latency_ms": 0.3,
+      "passed": true
+    },
+    {
+      "item_id": "struct-10",
+      "category": "Structured output prompts",
+      "raw_tokens": 53,
+      "optimized_tokens": 73,
+      "reduction_percent": -37.74,
+      "quality_score": 96.4,
+      "latency_ms": 0.43,
+      "passed": true
+    },
+    {
+      "item_id": "short-01",
+      "category": "Short prompts that should not be compressed",
+      "raw_tokens": 15,
+      "optimized_tokens": 15,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.35,
+      "passed": true
+    },
+    {
+      "item_id": "short-02",
+      "category": "Short prompts that should not be compressed",
+      "raw_tokens": 11,
+      "optimized_tokens": 11,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.19,
+      "passed": true
+    },
+    {
+      "item_id": "short-03",
+      "category": "Short prompts that should not be compressed",
+      "raw_tokens": 7,
+      "optimized_tokens": 7,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.16,
+      "passed": true
+    },
+    {
+      "item_id": "short-04",
+      "category": "Short prompts that should not be compressed",
+      "raw_tokens": 13,
+      "optimized_tokens": 13,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.17,
+      "passed": true
+    },
+    {
+      "item_id": "short-05",
+      "category": "Short prompts that should not be compressed",
+      "raw_tokens": 15,
+      "optimized_tokens": 15,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.18,
+      "passed": true
+    },
+    {
+      "item_id": "short-06",
+      "category": "Short prompts that should not be compressed",
+      "raw_tokens": 11,
+      "optimized_tokens": 11,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.16,
+      "passed": true
+    },
+    {
+      "item_id": "short-07",
+      "category": "Short prompts that should not be compressed",
+      "raw_tokens": 16,
+      "optimized_tokens": 16,
+      "reduction_percent": 0.0,
+      "quality_score": 94.2,
+      "latency_ms": 0.18,
+      "passed": true
+    },
+    {
+      "item_id": "short-08",
+      "category": "Short prompts that should not be compressed",
+      "raw_tokens": 11,
+      "optimized_tokens": 11,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.16,
+      "passed": true
+    },
+    {
+      "item_id": "short-09",
+      "category": "Short prompts that should not be compressed",
+      "raw_tokens": 12,
+      "optimized_tokens": 12,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.17,
+      "passed": true
+    },
+    {
+      "item_id": "short-10",
+      "category": "Short prompts that should not be compressed",
+      "raw_tokens": 14,
+      "optimized_tokens": 14,
+      "reduction_percent": 0.0,
+      "quality_score": 93.8,
+      "latency_ms": 0.18,
+      "passed": true
+    }
+  ]
+}
